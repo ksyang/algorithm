@@ -20,12 +20,12 @@ int main(void)
 	    if(flag == 0) {
 		min = five + three;
 		flag = 1;
-	}
-	else if((five+three) < min) {
-	    min = five + three;
+	    }
+	    else if((five+three) < min) {
+		 min = five + three;
+	    }
 	}
     }
-							    }
 		        
     cout << min << endl;
     return 0;
