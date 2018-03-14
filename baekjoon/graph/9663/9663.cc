@@ -17,13 +17,13 @@ void setDisable(int x, int y){
 	adj[x][y]--;
 
 	for(int i=1;i<N;i++){
-		if((x+i)<N||(y+i)<N)
+		if((x+i)<N && (y+i)<N)
 			adj[x+i][y+i]++;
-		if((x-i)>=0||(y-i)>=0)
+		if((x-i)>=0 && (y-i)>=0)
 			adj[x-i][y-i]++;
-		if((x+i)<N||(y-i)>=0)
+		if((x+i)<N && (y-i)>=0)
 			adj[x+i][y-i]++;
-		if((x-i)>=0||(y+i)<N)
+		if((x-i)>=0 && (y+i)<N)
 			adj[x-i][y+i]++;
 	}
 }
@@ -34,14 +34,15 @@ void setEnable(int x, int y){
 		adj[i][y]--;
 	}
 	adj[x][y]++;
+
 	for(int i=1;i<N;i++){
-		if((x+i)<N||(y+i)<N)
+		if((x+i)<N && (y+i)<N)
 			adj[x+i][y+i]--;
-		if((x-i)>=0||(y-i)>=0)
+		if((x-i)>=0 && (y-i)>=0)
 			adj[x-i][y-i]--;
-		if((x+i)<N||(y-i)>=0)
+		if((x+i)<N && (y-i)>=0)
 			adj[x+i][y-i]--;
-		if((x-i)>=0||(y+i)<N)
+		if((x-i)>=0 && (y+i)<N)
 			adj[x-i][y+i]--;
 	}
 }
@@ -72,13 +73,7 @@ int main(void)
 		adj[i].resize(N);
 	}
 
-	//printQueen(0);
-	setDisable(5, 5);
-	for(int i=0;i<N;i++){
-		for(int j=0;j<N;j++){
-			cout << adj[i][j];
-		}
-		cout << '\n';
-	}
+	printQueen(0);
+	cout << cnt;
 	return 0;
 }
